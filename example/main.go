@@ -21,6 +21,7 @@ import (
 	"github.com/byebyebruce/lockstepserver/protocol"
 	"github.com/byebyebruce/lockstepserver/room"
 	"github.com/byebyebruce/lockstepserver/util"
+	_ "github.com/byebyebruce/lockstepserver/example/api"
 	l4g "github.com/alecthomas/log4go"
 )
 
@@ -69,7 +70,7 @@ func Run() {
 	if nil != err {
 		panic(err)
 	}
-	l4g.Info("[main] kcp.Listen addr=[%s]", outAddress)
+	l4g.Info("[main] kcp.Listen addr=[%s]", *outAddress)
 	defer networkServer.Stop()
 
 	//主循环定时器
